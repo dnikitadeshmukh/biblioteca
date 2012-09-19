@@ -1,25 +1,35 @@
+import junit.framework.Assert;
+import junit.framework.TestCase;
 import org.junit.Test;
-import org.junit.Assert;
+
 import java.io.IOException;
 
-public class BiblieotecaTests {
+public class BibliotecaTest{
+
     @Test
-    public void isAppStartupWelcome(){
-        Assert.assertEquals("Welcome", new Biblioteca().startupMessage());
+    public void startUpMessageWelcome(){
+        Biblioteca obj=new Biblioteca();
+        Assert.assertEquals("Welcome", obj.showStartupMsg());
     }
 
     @Test
-    public void isMenuPresent(){
-        Assert.assertEquals(true, new Biblioteca().displayMenu());
+    public void menushowed(){
+        Assert.assertTrue(new Menu().showMenu());
     }
 
     @Test
-    public void validOptionShouldBe1or2or3() throws IOException {
-        Assert.assertTrue(new Biblioteca().isValidOption());
+    public void isOptionSelected() throws IOException {
+        Assert.assertEquals(1,new Menu().chooseOption());
     }
 
     @Test
-    public void isReserved() throws IOException {
-        Assert.assertEquals(true, new Biblioteca().reserveBook());
+    public void checkIfOptionValid(){
+        Assert.assertTrue(new Menu().isValidOption());
+    }
+
+    @Test
+    public void bookReservtionSuccessful() {
+        Book book=new Book();
+        Assert.assertTrue(new User().reserve(book));
     }
 }
