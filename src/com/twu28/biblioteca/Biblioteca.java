@@ -5,8 +5,7 @@ public class Biblioteca {
         startupMsg="Welcome";
     }
 
-    public String showStartupMsg(){
+    public void showStartupMsg(){
         System.out.println(startupMsg);
-        return startupMsg;
     }
 }
