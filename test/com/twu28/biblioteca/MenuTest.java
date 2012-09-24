@@ -48,6 +48,64 @@ public class MenuTest {
         System.setOut(originalout);
     }
 
+    @Test
+    public void moviesOptionShouldBeDisplayedInMenu()
+    {
+        setTestParametersForConsoleOutput();
+        Menu obj=new Menu();
+        obj.showMenu();
+        Assert.assertEquals("Movies", output.toString().trim().substring(31, 37));
+
+    }
+
+    @Test
+    public void moviesListShouldBeDisplayed(){
+        setTestParametersForConsoleOutput();
+        Movies movie = new Movies();
+        movie.diplayMovieList();
+        Assert.assertTrue(output.toString().trim() != "");
+        System.setOut(originalout);
+    }
+
+    @Test
+    public void movieListShouldHaveRatingsField(){
+        setTestParametersForConsoleOutput();
+        Movies movies=new Movies();
+        movies.displayListFormat();
+        Assert.assertEquals("Ratings",output.toString().trim().substring(6,13));
+        System.setOut(originalout);
+
+    }
+
+    @Test
+    public void movieListShouldHaveDirectorField(){
+        setTestParametersForConsoleOutput();
+        Movies movies=new Movies();
+        movies.displayListFormat();
+        Assert.assertEquals("Director",output.toString().trim().substring(21,29));
+        System.setOut(originalout);
+
+    }
+
+    @Test
+    public void movieListShouldHaveYearField(){
+        setTestParametersForConsoleOutput();
+        Movies movies=new Movies();
+        movies.displayListFormat();
+        Assert.assertEquals("Year",output.toString().trim().substring(15,19));
+        System.setOut(originalout);
+
+    }
+
+    @Test
+    public void movieListShouldHaveNameField(){
+        setTestParametersForConsoleOutput();
+        Movies movies=new Movies();
+        movies.displayListFormat();
+        Assert.assertEquals("Name",output.toString().trim().substring(0,4));
+        System.setOut(originalout);
+
+    }
 
 
 }

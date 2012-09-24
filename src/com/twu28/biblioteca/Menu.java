@@ -11,7 +11,7 @@ public class Menu {
     }
 
     public void showMenu(){
-        System.out.println("1.Reserve Book\n2.Submit Book\n3.User Details\n4.Exit");
+        System.out.println("1.Reserve Book\n2.Submit Book\n3.Movies\n4.User Details\n5.Exit");
 
     }
 
@@ -20,10 +20,12 @@ public class Menu {
     }
 
     public boolean isValidOption() {
-        return  (menuOption>=1 && menuOption<5);
+        return  (menuOption>=1 && menuOption<=5);
     }
 
     public void printInvalidMessage(){
         System.out.println("Select a valid option");
     }
+
+
 }
