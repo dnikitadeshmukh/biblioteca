@@ -1,5 +1,5 @@
 public class Login {
-    public String startupMsg;
+    private String startupMsg;
     private String loginUserName;
     private String loginPassword;
     public User users[];
