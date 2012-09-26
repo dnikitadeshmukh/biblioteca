@@ -1,10 +1,10 @@
-public class Biblioteca {
+public class Login {
     public String startupMsg;
     private String loginUserName;
     private String loginPassword;
     public User users[];
 
-    Biblioteca(){
+    Login(){
         startupMsg="Welcome";
         users=new User[2];
     }
@@ -17,7 +17,7 @@ public class Biblioteca {
         System.out.println("Enter Login User Name and Password");
     }
 
-    public void login() {
+    public void acceptLoginDetails() {
         loginUserName="111-1111";
         loginPassword="nikita";
     }
