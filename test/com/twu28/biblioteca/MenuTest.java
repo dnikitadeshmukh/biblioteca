@@ -24,7 +24,7 @@ public class MenuTest {
     public void menuShouldBeDisplayed(){
         setTestParametersForConsoleOutput();
         Menu obj=new Menu();
-        obj.showMenu();
+        ;
         Assert.assertTrue(output.toString().trim()!="");
         System.setOut(originalout);
     }
@@ -62,7 +62,7 @@ public class MenuTest {
     public void moviesListShouldBeDisplayed(){
         setTestParametersForConsoleOutput();
         Movies movie = new Movies();
-        movie.diplayMovieList();
+        movie.diplayMovieList(movie);
         Assert.assertTrue(output.toString().trim() != "");
         System.setOut(originalout);
     }

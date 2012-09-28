@@ -23,9 +23,10 @@ public class BookBankTest {
     public void CustomerShouldViewAllBooksInLibrary(){
         setTestParametersForConsoleOutput();
         BookBank book=new BookBank();
-        book.display();
-        Assert.assertTrue(output.toString().trim().startsWith("Books"));
+        book.displayBooks(book);
+        Assert.assertTrue(output.toString().trim()!="");
         System.setOut(originalout);
+
     }
 
 
@@ -40,7 +41,7 @@ public class BookBankTest {
     }
 
     @Test
-    public void customerSelectsBook21AndMessageIsDisplayed(){
+    public void customerSelectsBook2AndMessageIsDisplayed(){
         setTestParametersForConsoleOutput();
         setTestParametersForConsoleOutput();
         BookBank bookBank =new BookBank();
@@ -49,7 +50,7 @@ public class BookBankTest {
     }
 
     @Test
-    public void customerSelectsBook31AndMessageIsDisplayed(){
+    public void customerSelectsBook3AndMessageIsDisplayed(){
         setTestParametersForConsoleOutput();
         setTestParametersForConsoleOutput();
         BookBank bookBank =new BookBank();

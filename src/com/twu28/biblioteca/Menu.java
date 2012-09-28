@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class Menu {
 
-    public int menuOption;
+    private int menuOption;
 
     Menu(){
         menuOption=1;

@@ -5,15 +5,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-public class LoginTest {
-
+public class StartUpObjectTest {
     @Test
     public void startUpMessageShouldBeWelcome(){
         OutputStream output=new ByteArrayOutputStream();
         PrintStream printstream = new PrintStream(output);
         PrintStream originalout=System.out;
         System.setOut(printstream);
-        Login obj=new Login();
+        StartUpObject obj=new StartUpObject();
         obj.showStartupMsg();
         Assert.assertEquals("Welcome", output.toString().trim());
         System.setOut(originalout);
@@ -25,8 +24,8 @@ public class LoginTest {
         PrintStream printstream = new PrintStream(output);
         PrintStream originalout=System.out;
         System.setOut(printstream);
-        Login login =new Login();
-        login.dispayLoginMessage();
+        StartUpObject obj =new StartUpObject();
+        obj.dispayLoginMessage();
         Assert.assertTrue(output.toString().trim().startsWith("Enter Login User Name and Password"));
         System.setOut(originalout);
 
@@ -34,24 +33,17 @@ public class LoginTest {
 
     @Test
     public void user1CreationSuccessfullyDone(){
-        Login login =new Login();
-        Assert.assertEquals("111-1111", login.createUser(1));
+        StartUpObject obj =new StartUpObject();
+        Assert.assertEquals("111-1111", obj.createUser(1));
 
     }
 
     @Test
     public void user2CreationSuccessfullyDone(){
-        Login login =new Login();
-        Assert.assertEquals("111-1112", login.createUser(2));
+        StartUpObject obj =new StartUpObject();
+        Assert.assertEquals("111-1112", obj.createUser(2));
 
     }
 
-    @Test
-    public void User1LogsInWithCorrectUserNameAndPassword(){
-        Login login =new Login();
-        login.createUser(1);
-        login.acceptLoginDetails();
-        Assert.assertTrue(login.isLoginSuccesful());
 
-    }
 }

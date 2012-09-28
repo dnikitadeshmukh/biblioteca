@@ -1,10 +1,10 @@
-public class Login {
+public class StartUpObject {
     private String startupMsg;
     private String loginUserName;
     private String loginPassword;
-    public User users[];
+    public static User users[];
 
-    Login(){
+    StartUpObject(){
         startupMsg="Welcome";
         users=new User[2];
     }
@@ -17,23 +17,6 @@ public class Login {
         System.out.println("Enter Login User Name and Password");
     }
 
-    public void acceptLoginDetails() {
-        loginUserName="111-1111";
-        loginPassword="nikita";
-    }
-
-    public boolean isLoginSuccesful() {
-        for(int i=0;i<2;i++)
-            if(loginUserName.equals(users[i].libraryNumber))
-                if(loginPassword.equals(users[i].password)){
-                    users[i].logInStatus=true;
-                    return true;
-                }
-                else
-                    return false;
-
-        return false;
-    }
 
     public String createUser(int userno) {
         if(userno==1){
@@ -49,3 +32,5 @@ public class Login {
 
     }
 }
+
+

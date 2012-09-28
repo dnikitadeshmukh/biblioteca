@@ -1,4 +1,5 @@
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import junit.framework.Assert;
@@ -20,12 +21,25 @@ public class UserTest {
     }
 
     @Test
-    public void checkIfUserIsLoggedIn(){
-        Biblioteca biblioteca=new Biblioteca();
-        biblioteca.createUser(1);
-        biblioteca.login();
-        biblioteca.isLoginSuccesful();
-        Assert.assertTrue(biblioteca.users[0].logInStatus);
+    public void User1LogsInWithCorrectUserNameAndPassword() throws IOException {
+        StartUpObject obj =new StartUpObject();
+        obj.createUser(1);
+        User user=new User();
+        user.logIn();
+        Assert.assertTrue(user.isLoginSuccesful());
+
     }
+
+    @Test
+    public void checkIfUserIsLoggedIn() throws IOException {
+        StartUpObject obj =new StartUpObject();
+        obj.createUser(1);
+        User user=new User();
+        user.logIn();
+        user.isLoginSuccesful();
+        Assert.assertTrue(user.isUserLoggedIn(StartUpObject.users[0]));
+    }
+
+
 }
 
